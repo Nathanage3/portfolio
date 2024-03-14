@@ -85,8 +85,8 @@ a.article-title:hover {
 }
 
 body {
-  background-color: #aebce6;
+  background-color: #dddddd;
 }
-.custom-modal-bg {
-  background-color: #de1e2b; /* Replace with the desired color code */
+.finder_form {
+  width: 100%;
 }

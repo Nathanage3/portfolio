@@ -1,0 +1,74 @@
+{% extends "layout.html" %} {% block content %}
+<div class="content-section">
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">{{ legend }}</legend>
+    
+        <div class="form-group">
+          {{ form.primary_school_name.label(class="form-control-label") }} {% if
+          form.primary_school_name.errors %} {{
+          form.primary_school_name(class="form-control form-control-lg
+          is-invalid") }}
+          <div class="invalid-feedback">
+            {% for error in form.primary_school_name.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+          {% else %} {{ form.primary_school_name(class="form-control
+          form-control-lg") }} {% endif %}
+        </div>
+        <div class="form-group col-md-6">
+          {{ form.high_school_name.label(class="form-control-label") }} {% if
+          form.high_school_name.errors %} {{
+          form.high_school_name(class="form-control form-control-lg is-invalid")
+          }}
+          <div class="invalid-feedback">
+            {% for error in form.high_school_name.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+          {% else %} {{ form.high_school_name(class="form-control
+          form-control-lg") }} {% endif %}
+        </div>
+      
+        <div class="form-group col-md-6">
+          {{ form.current_residence.label(class="form-control-label") }} {% if
+          form.current_residence.errors %} {{
+          form.current_residence(class="form-control form-control-lg
+          is-invalid") }}
+          <div class="invalid-feedback">
+            {% for error in form.current_residence.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+          {% else %} {{ form.current_residence(class="form-control
+          form-control-lg") }} {% endif %}
+        </div>
+        <div class="form-group col-md-6">
+          {{ form.occupation.label(class="form-control-label") }} {{
+          form.occupation(class="form-control form-control-lg") }}
+        </div>
+      </div>
+        <div id="other-form" class="form-group">
+          <div class="form-group col-md-6">
+            {{ form.university_or_college_name.label(class="form-control-label")
+            }} {% if form.university_or_college_name.errors %} {{
+            form.university_or_college_name(class="form-control form-control-lg
+            is-invalid") }}
+            <div class="invalid-feedback">
+              {% for error in form.university_or_college_name.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %} {{ form.university_or_college_name(class="form-control
+            form-control-lg") }} {% endif %}
+          </div>
+        </div>   
+    </fieldset>
+    <div class="form-group">
+      {{ form.submit(class="btn btn-outline-info") }}
+    </div>
+  </form>
+</div>
+{% endblock %}

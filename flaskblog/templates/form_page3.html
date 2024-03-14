@@ -1,0 +1,51 @@
+{% extends "layout.html" %} {% block content %}
+<div class="content-section">
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">{{ legend }}</legend>
+      <div class="row">
+        <div class="form-group col-md-6">
+          {{ form.height_cm.label(class="form-control-label") }} {% if
+          form.height_cm.errors %} {{ form.height_cm(class="form-control
+          form-control-lg is-invalid") }}
+          <div class="invalid-feedback">
+            {% for error in form.height_cm.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+          {% else %} {{ form.height_cm(class="form-control form-control-lg") }}
+          {% endif %}
+        </div>
+
+        <div class="form-group col-md-6">
+          {{ form.nationality.label(class="form-control-label") }} {{
+          form.nationality(class="form-control form-control-lg") }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          {{ form.birth_city.label(class="form-control-label") }} {% if
+          form.birth_city.errors %} {{ form.birth_city(class="form-control
+          form-control-lg is-invalid") }}
+          <div class="invalid-feedback">
+            {% for error in form.birth_city.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+          {% else %} {{ form.birth_city(class="form-control form-control-lg") }}
+          {% endif %}
+        </div>
+
+        <div class="form-group col-md-6">
+          {{ form.skin_color.label(class="form-control-label") }} {{
+          form.skin_color(class="form-control form-control-lg") }}
+        </div>
+      </div>
+    </fieldset>
+    <div class="form-group">
+      {{ form.submit(class="btn btn-outline-info") }}
+    </div>
+  </form>
+</div>
+{% endblock %}
