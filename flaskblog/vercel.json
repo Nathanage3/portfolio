@@ -8,8 +8,12 @@
   ],
   "routes": [
     {
+      "src": "/api/(.*)",
+      "dest": "flaskblog/run.py"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/flaskblog/run.py"
+      "dest": "flaskblog/run.py"
     }
   ]
 }
