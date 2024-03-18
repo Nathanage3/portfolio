@@ -2,18 +2,19 @@
   "version": 2,
   "builds": [
     {
-      "src": "flaskblog/run.py",
-      "use": "@vercel/python"
+      "src": "./run.py",
+      "use": "@vercel/python",
+      "config": { "pythonVersion": "3.8" }
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "flaskblog/run.py"
+      "dest": "flaskblog/api.py"
     },
     {
       "src": "/(.*)",
-      "dest": "flaskblog/run.py"
+      "dest": "./run.py"
     }
   ]
 }
